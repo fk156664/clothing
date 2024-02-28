@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clothes4u</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+        .container {
+            width: 90%;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        header {
+            background-color: #8a5f6d;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            border-radius: 10px 10px 0 0;
+            margin-bottom: 20px;
+        }
+        nav {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        nav ul li a {
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #6d6b6c;
+        }
+        .contact-info {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .contact-info p {
+            margin: 5px 0;
+        }
+        .product {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            position: relative;
+        }
+        .product img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+        .product-info {
+            margin-bottom: 20px;
+        }
+        .price {
+            font-weight: bold;
+            color: #0a0a0a;
+            font-size: 1.2em;
+        }
+        .colors {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .color-option {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin: 0 5px;
+            border: 2px solid #666;
+            cursor: pointer;
+        }
+        .color-option:hover {
+            border-color: #333;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #000000;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #cc0052;
+        }
+        .cart {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 40px;
+        }
+        .cart h2 {
+            margin-bottom: 20px;
+        }
+        .cart-item {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .remove-btn {
+            background-color: #ff3366;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .remove-btn:hover {
+            background-color: #cc0052;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>- clothes4u -</h1>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="#">Startseite</a></li>
+        <li><a href="#">Frauen</a></li>
+        <li><a href="#">Männer</a></li>
+    </ul>
+</nav>
+
+<div class="container">
+    <div class="contact-info">
+        <p>Kontaktieren Sie uns unter:</p>
+        <p>E-Mail: info@clothes4u.com</p>
+        <p>Telefon: 123-456-789</p>
+    </div>
+    
+    <div class="product">
+        <img src="tshirt basic.jpg"  alt="T-Shirt" width="250">
+        <div class="product-info">
+            <h2>T-Shirt</h2>
+            <p>Ein bequemes T-Shirt für jeden Anlass.</p>
+            <p class="price">19,99 €</p>
+        </div>
+        <div class="colors">
+            <span>Verfügbare Farben:</span>
+            <div class="color-option" style="background-color: #fffefe;"></div>
+            <div class="color-option" style="background-color: #000000;"></div>
+            <div class="color-option" style="background-color: #727271;"></div>
+        </div>
+        <button class="btn" onclick="addToCart('T-Shirt', 19.99)">Zum Warenkorb hinzufügen</button>
+    </div>
+
+    <div class="product">
+        <img src="jeansbasic.webp" alt="Hose" width="250">
+        <div class="product-info">
+            <h2>Hose</h2>
+            <p>Eine stilvolle Hose für jeden Tag.</p>
+            <p class="price">29,99 €</p>
+        </div>
+        <div class="colors">
+            <span>Verfügbare Farben:</span>
+            <div class="color-option" style="background-color: #404894;"></div>
+            <div class="color-option" style="background-color: #cae9fd;"></div>
+            <div class="color-option" style="background-color: #7097c4;"></div>
+        </div>
+        <button class="btn" onclick="addToCart('Hose', 29.99)">Zum Warenkorb hinzufügen</button>
+    </div>
+    
+    <div class="product">
+        <img src="dress.jpg" alt="Kleid">
+        <div class="product-info">
+            <h2>Kleid</h2>
+            <p>Ein elegantes Kleid für besondere Anlässe.</p>
+            <p class="price">39,99 €</p>
+        </div>
+        <div class="colors">
+            <span>Verfügbare Farben:</span>
+            <div class="color-option" style="background-color: #ff99cc;"></div>
+            <div class="color-option" style="background-color: #99ffcc;"></div>
+            <div class="color-option" style="background-color: #ffcc99;"></div>
+        </div>
+        <button class="btn" onclick="addToCart('Kleid', 39.99)">Zum Warenkorb hinzufügen</button>
+    </div>
+    
+    <div class="product">
+        <img src="jacket.jpg" alt="Jacke">
+        <div class="product-info">
+            <h2>Jacke</h2>
+            <p>Eine trendige Jacke für kühle Tage.</p>
+            <p class="price">49,99 €</p>
+        </div>
+        <div class="colors">
+            <span>Verfügbare Farben:</span>
+            <div class="color-option" style="background-color: #99ccff;"></div>
+            <div class="color-option" style="background-color: #ff9999;"></div>
+            <div class="color-option" style="background-color: #99ff99;"></div>
+        </div>
+        <button class="btn" onclick="addToCart('Jacke', 49.99)">Zum Warenkorb hinzufügen</button>
+    </div>
+</div>
+
+<div class="container cart">
+    <h2>Warenkorb</h2>
+    <div id="cartItems"></div>
+</div>
+
+<script>
+    let cart = [];
+
+    function addToCart(productName, price) {
+        cart.push({ name: productName, price: price });
+        updateCart();
+    }
+
+    function removeFromCart(index) {
+        cart.splice(index, 1);
+        updateCart();
+    }
+
+    function updateCart() {
+        let cartItems = document.getElementById('cartItems');
+        cartItems.innerHTML = '';
+        cart.forEach((item, index) => {
+            let itemElement = document.createElement('div');
+            itemElement.classList.add('cart-item');
+            itemElement.innerHTML = `
+                <p>${item.name} - ${item.price} €</p>
+                <button class="remove-btn" onclick="removeFromCart(${index})">Entfernen</button>
+            `;
+            cartItems.appendChild(itemElement);
+        });
+    }
+</script>
+
+</body>
+</html>
